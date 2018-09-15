@@ -20,7 +20,15 @@
     </head>
 
     <body>
+<script>
+    var buttons = document.getElementsByTagName('button');
 
+for (let i = 0; i < buttons.length; i++) {
+    const element = buttons[i];
+    console.log(element);
+    
+}    
+</script>
         <div class="container">
             <div class="row">
 
@@ -33,18 +41,10 @@
             </div>
             <div class="row">
 
-                <button class="col-3 col-sm-2 p-0" data-gemvalue="6" id="sapphire">
-                    <img class="img-fluid" src=assets/images/sapphire.png>
-                </button>
-                <button class="col-3 col-sm-2 p-0" data-gemvalue="7" id="diamond">
-                    <img class="img-fluid" src=assets/images/diamond.png>
-                </button>
-                <button class="col-3 col-sm-2 p-0" data-gemvalue="5" id="emerald">
-                    <img class="img-fluid" src=assets/images/emerald.png>
-                </button>
-                <button class="col-3 col-sm-2 p-0" data-gemvalue="4" id="ruby">
-                    <img class="img-fluid" src=assets/images/ruby.png>
-                </button>
+                    <img class="img-fluid col-3 col-sm-2 p-0" src=assets/images/sapphire.png id="sapphire">
+                    <img class="img-fluid col-3 col-sm-2 p-0" src=assets/images/diamond.png id="diamond">
+                    <img class="img-fluid col-3 col-sm-2 p-0" src=assets/images/emerald.png id="emerald">
+                    <img class="img-fluid col-3 col-sm-2 p-0" src=assets/images/ruby.png id="ruby">
 
             </div>
             <div class="row">

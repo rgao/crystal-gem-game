@@ -6,17 +6,19 @@ for (var i = 0; i < 101; i++) {
 
 goal = goal_arr[Math.floor(Math.random)];
 
-// var gem_value = {
-//     "ruby" : 4,
-//     "sapphire" : 6,
-//     "emerald" : 5,
-//     "diamond" : 7
-// }
+var gems = {
+    "ruby" : 4,
+    "sapphire" : 6,
+    "emerald" : 5,
+    "diamond" : 7
+}
 
 var score = 0
 
-$("button").on("click", function() {
-    score += $(this).data-gemvalue();
+$("img").on("click", function() {
+    var gemvalue = $(this).attr("id");
+    score += gems[gemvalue];
+    console.log(score)
     if (score === goal) {
         // display win
     } else if (score > goal) {
