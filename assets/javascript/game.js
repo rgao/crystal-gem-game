@@ -5,12 +5,12 @@ for (var i = 0; i < 101; i++) {
 };
 
 goal = goal_arr[Math.floor(Math.random() * goal_arr.length)];
-$(".goal").text(goal)
+$(".goalvalue").text(goal)
 
 var gems = {
-    "ruby" : [3, 4, 5], 
-    "sapphire" : [5, 6, 7, 8],
-    "emerald" : [4, 5, 6, 7],
+    "ruby" : [2, 3, 4], 
+    "sapphire" : [4, 5, 6, 7],
+    "emerald" : [3, 4, 5, 6],
     "diamond" : [5, 6, 7, 8, 9],
 
     gemValue : function () {
@@ -19,6 +19,13 @@ var gems = {
                 this[key] = this[key][Math.floor(Math.random() * this[key].length)];
             };
         };
+    },
+
+    gemReset : function () {
+        this["ruby"] = [2, 3, 4];
+        this["sapphire"] = [4, 5, 6, 7];
+        this["emerald"] = [3, 4, 5, 6]
+        this["diamond"] = [5, 6, 7, 8, 9];
     }
 };
 
@@ -31,22 +38,32 @@ var losses = 0
 $("img").on("click", function() {
     var gem = $(this).attr("id");
     score += gems[gem];
-    $(".score").text(score);
+    $(".score").css("font-size", "32px");
+    $(".score").css("color", "brown");
+    $(".scorevalue").text(score);
+
     if (score === goal) {
         wins += 1;
-        $(".win").text(wins);
-        $(".score").text("Congratulations, You Win! Your score was " + score + " . Click a fabulous gem to play again.");
+        $(".winvalue").text(wins);
+        $(".score").css("font-size", "24px");
+        $(".score").css("color", "green");
+        $(".scorevalue").text("Congratulations, You Win! Your score was " + score + ". Click a fabulous gem to play again.");
         score = 0;
         goal = goal_arr[Math.floor(Math.random() * goal_arr.length)];
-        $(".goal").text(goal);
+        $(".goalvalue").text(goal);
+        gems.gemReset();
         gems.gemValue();
+
     } else if (score > goal) {
         losses += 1;
-        $(".loss").text(losses);
-        $(".score").text("Oh no, your score was " + score + " and went over the goal! Click a fabulous gem to play again.");
+        $(".lossvalue").text(losses);
+        $(".score").css("font-size", "24px");
+        $(".score").css("color", "red");
+        $(".scorevalue").text("Oh no, your score was " + score + " and went over the goal! Click a fabulous gem to play again.");
         score = 0;
         goal = goal_arr[Math.floor(Math.random() * goal_arr.length)];
-        $(".goal").text(goal)   ;
+        $(".goalvalue").text(goal);
+        gems.gemReset();
         gems.gemValue();
     };
 })

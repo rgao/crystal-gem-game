@@ -31,11 +31,12 @@ for (let i = 0; i < buttons.length; i++) {
 </script>
         <div class="container">
             <div class="row name p-3 mt-3 mx-5 mb-5">
-                Gems are Outrageous: Collecting Game
+                Gems are Truly Outrageous: Collecting Game
             </div>
+
             <div class="row">
                 
-                <div class="col-sm-4 desc pt-2">
+                <div class="col-sm-4 desc mb-5 pt-2">
                     <p>You will be given a random number as goal at the start of the game.</p>
 
                     <p>Each gem has its own value; clicking on a gem will add its value to your score. The values are initially hidden.</p>
@@ -47,29 +48,32 @@ for (let i = 0; i < buttons.length; i++) {
 
                 <div class="col-sm-8">
 
-                    <div class="row justify-content-center">
-                        <h1 class="col-6">Goal: <span class="goal"></span></h1>
+                    <div class="row justify-content-center mx-5 mb-5">
+                        <h1 class="goal p-3">Goal: <span class="goalvalue"></span></h1>
                     </div>
 
-                    <div class="row justify-content-center">
-                        <h3 class="col-2">Wins: <span class="win"></span></h3>
-                        <h3 class="col-2">Losses: <span class="loss"></span></h3>
+                    <div class="row justify-content-center pb-5">
+                        <h3 class="col-4 col-md-3 win pb-1 text-center">Wins: <span class="winvalue"></span></h3>
+                        <h3 class="col-4 col-md-3 loss pb-1 text-center">Losses: <span class="lossvalue"></span></h3>
                     </div>
 
-                    <div class="row justify-content-center">
-                        <h2 class="score">Score : <span class="score"></span></h2>
+                    <div class="row justify-content-center mx-3">
+                        <h2 class="score px-2 pb-1">Score : <span class="scorevalue"></span></h2>
                     </div>
     
-                    <div class="row justify-content-center">             
+                    <div class="row justify-content-center mt-5">             
                         <div class="col-3 col-sm-2 p-0">
                             <img class="img-fluid" src=assets/images/sapphire.png id="sapphire">
                         </div>
+                        <div class="col-sm-1"></div>
                         <div class="col-3 col-sm-2 p-0">   
                             <img class="img-fluid" src=assets/images/diamond.png id="diamond">
                         </div>
+                        <div class="col-sm-1"></div>
                         <div class="col-3 col-sm-2 p-0">
                             <img class="img-fluid" src=assets/images/emerald.png id="emerald">
                         </div>
+                        <div class="col-sm-1"></div>
                         <div class="col-3 col-sm-2 p-0">
                             <img class="img-fluid" src=assets/images/ruby.png id="ruby">
                         </div>

@@ -8,10 +8,36 @@ body {
     color: magenta;
     justify-content: center;
     font-size: 36px;
-    font-family: 'Calibri';
+    font-family: 'Impact';
 }
 
 .desc {
-    border: 3px solid brown;
+    /* border: 3px solid brown; */
     color: gold;
+}
+
+.goal {
+    border: 3px double magenta;
+    color: gold;
+    font-family: "Impact"
+}
+
+.win {
+    border: 3px double blue;
+    color: green;
+    background-color: lightblue;
+    font-family: "Impact"
+}
+
+.loss {
+    border: 3px double blue;
+    color: red;
+    background-color: lightblue;
+    font-family: "Impact"
+}
+
+.score {
+    color: brown;
+    background-color: lightblue;
+    border: 3px double gold;
 }
