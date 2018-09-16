@@ -4,24 +4,49 @@ for (var i = 0; i < 101; i++) {
     goal_arr.push(i + 19);
 };
 
-goal = goal_arr[Math.floor(Math.random)];
+goal = goal_arr[Math.floor(Math.random() * goal_arr.length)];
+$(".goal").text(goal)
 
 var gems = {
-    "ruby" : 4,
-    "sapphire" : 6,
-    "emerald" : 5,
-    "diamond" : 7
-}
+    "ruby" : [3, 4, 5], 
+    "sapphire" : [5, 6, 7, 8],
+    "emerald" : [4, 5, 6, 7],
+    "diamond" : [5, 6, 7, 8, 9],
+
+    gemValue : function () {
+        for (var key in this) {
+            if (Array.isArray(this[key])) {
+                this[key] = this[key][Math.floor(Math.random() * this[key].length)];
+            };
+        };
+    }
+};
+
+gems.gemValue();
 
 var score = 0
+var wins = 0
+var losses = 0
 
 $("img").on("click", function() {
-    var gemvalue = $(this).attr("id");
-    score += gems[gemvalue];
-    console.log(score)
+    var gem = $(this).attr("id");
+    score += gems[gem];
+    $(".score").text(score);
     if (score === goal) {
-        // display win
+        wins += 1;
+        $(".win").text(wins);
+        $(".score").text("Congratulations, You Win! Your score was " + score + " . Click a fabulous gem to play again.");
+        score = 0;
+        goal = goal_arr[Math.floor(Math.random() * goal_arr.length)];
+        $(".goal").text(goal);
+        gems.gemValue();
     } else if (score > goal) {
-        // display loss
+        losses += 1;
+        $(".loss").text(losses);
+        $(".score").text("Oh no, your score was " + score + " and went over the goal! Click a fabulous gem to play again.");
+        score = 0;
+        goal = goal_arr[Math.floor(Math.random() * goal_arr.length)];
+        $(".goal").text(goal)   ;
+        gems.gemValue();
     };
 })
