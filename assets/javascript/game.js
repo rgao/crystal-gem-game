@@ -42,14 +42,14 @@ document.addEventListener("DOMContentLoaded", function(){
         score += gems[gem];
         $(".score").css("font-size", "32px");
         $(".score").css("color", "brown");
-        $(".scorevalue").text(score);
+        $(".score").text("Score: " + score);
 
         if (score === goal) {
             wins += 1;
             $(".winvalue").text(wins);
             $(".score").css("font-size", "24px");
             $(".score").css("color", "green");
-            $(".scorevalue").text("Congratulations, You Win! Your score was " + score + ". Click a fabulous gem to play again.");
+            $(".score").text("Congratulations, You Win! Your score was " + score + ". Click a fabulous gem to play again.");
             score = 0;
             goal = goal_arr[Math.floor(Math.random() * goal_arr.length)];
             $(".goalvalue").text(goal);
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function(){
             $(".lossvalue").text(losses);
             $(".score").css("font-size", "24px");
             $(".score").css("color", "red");
-            $(".scorevalue").text("Oh no, your score was " + score + " and went over the goal! Click a fabulous gem to play again.");
+            $(".score").text("Oh no, your score was " + score + " and went over the goal! Click a fabulous gem to play again.");
             score = 0;
             goal = goal_arr[Math.floor(Math.random() * goal_arr.length)];
             $(".goalvalue").text(goal);
