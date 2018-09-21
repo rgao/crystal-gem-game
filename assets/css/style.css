@@ -40,3 +40,10 @@ body {
     background-color: lightblue;
     border: 3px double gold;
 }
+
+footer {
+    color: #ffffff;
+    background-color: #666666;
+    height: 40px;
+    font-size: 12px;
+}
