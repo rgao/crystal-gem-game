@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function(){
     var losses = 0
 
     $("img").on("click", function() {
+        document.getElementById("ping").play();
         var gem = $(this).attr("id");
         score += gems[gem];
         $(".score").css("font-size", "32px");
@@ -45,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function(){
         $(".score").text("Score: " + score);
 
         if (score === goal) {
+            document.getElementById("winning").play();
             wins += 1;
             $(".winvalue").text(wins);
             $(".score").css("font-size", "24px");
@@ -57,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function(){
             gems.gemValue();
 
         } else if (score > goal) {
+            document.getElementById("elephant").play();
             losses += 1;
             $(".lossvalue").text(losses);
             $(".score").css("font-size", "24px");
